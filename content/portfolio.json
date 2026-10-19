@@ -1,11 +1,25 @@
 {
-  "_note": "Portfolio content for Suryansh Sharma, synchronized with official resume.",
+  "_note": "Portfolio content for Suryansh Sharma, aligned with the uploaded resume and details provided. Verify all links, dates, claims, and downloadable assets before production.",
   "person": {
     "name": "Suryansh Sharma",
-    "role": "Node.js-Focused Full Stack Software Engineer",
+    "role": "Node.js-Focused Full-Stack Software Engineer",
     "location": "Amroha, Uttar Pradesh, India",
-    "bio": "BTECH pre-final-year student (2028) and Node.js-focused Full Stack Software Engineer with experience in Node.js/Express.js (internship), along with frontend development using React.js. Built scalable payment microservices, optimized databases using MongoDB, and deployed applications on AWS, Render, and Vercel, experienced in delivering secure, and production-ready systems with real-world integrations.",
-    "currently": "Building cloud-based developer tools and multi-agent AI systems; open to backend-focused software engineering roles and internships.",
+    "bio": "I'm a pre-final-year B.Tech student in Computer Science and Engineering at COER University (2024–2028), focused on backend engineering with Node.js and Express.js. I build REST APIs, payment workflows, and full-stack applications, and I enjoy working across databases, cloud deployment, containerized infrastructure, and AI-powered developer tools. My goal is to build dependable software that solves practical problems and is designed with security, maintainability, and scale in mind.",
+    "currently": "Exploring backend systems, cloud-native developer tools, and multi-LLM applications. Open to backend-focused software engineering internships, collaborative projects, and opportunities to learn from strong engineering teams.",
+    "aspirations": [
+      "Grow deeper expertise in Node.js, Express.js, API design, and distributed backend systems.",
+      "Build reliable services with clear boundaries, secure integrations, observability, and thoughtful error handling.",
+      "Learn more about cloud infrastructure, containers, Kubernetes, and production deployment practices.",
+      "Explore practical applications of generative AI, agent workflows, and multi-model orchestration.",
+      "Contribute to products where engineering quality, user value, and continuous learning matter."
+    ],
+    "workingPrinciples": [
+      "Solve the underlying problem before adding complexity.",
+      "Prefer maintainable code, explicit interfaces, and reusable components.",
+      "Treat authentication, validation, retries, and failure handling as core product requirements.",
+      "Measure improvements when reliable measurements are available; avoid unsupported claims.",
+      "Keep learning through building, debugging, documenting, and iterating."
+    ],
     "photos": [
       {
         "src": "/photos/portrait.jpg",
@@ -13,7 +27,7 @@
         "caption": ""
       }
     ],
-    "resume": "/resume.docx",
+    "resume": "/resume.pdf",
     "resumeDocx": "/resume.docx",
     "resumePdf": "/resume.pdf",
     "contact": {
@@ -36,8 +50,15 @@
     }
   },
   "collectionTitle": "Suryansh Sharma",
-  "collectionSubtitle": "Selected work, engineering practice, and learning",
+  "collectionSubtitle": "Selected work, engineering practice, and what I'm learning",
   "collectionEdition": "Portfolio Edition · 2026",
+  "siteNarrative": {
+    "headline": "Building useful systems, one layer at a time.",
+    "intro": "A developer's working collection: backend services, full-stack products, cloud experiments, and applied AI.",
+    "closing": "I'm interested in the engineering behind products: how APIs behave, how services recover from failure, how infrastructure supports growth, and how AI can make tools more useful.",
+    "primaryCta": "Explore selected work",
+    "secondaryCta": "Get in touch"
+  },
   "books": [
     {
       "id": "about",
@@ -45,8 +66,8 @@
       "roman": "I",
       "title": "About",
       "discipline": "Introduction",
-      "note": "A full-stack developer focused on backend engineering and useful products.",
-      "deck": "I'm Suryansh Sharma, a pre-final-year B.Tech student (2024–2028) at COER University and a Node.js-focused Full Stack Software Engineer. I specialize in scalable backend architectures with Node.js/Express.js, payment microservices, and modern frontend interfaces with React.js and Next.js.",
+      "note": "Backend-first engineering with a full-stack perspective.",
+      "deck": "I'm Suryansh Sharma, a pre-final-year B.Tech student at COER University and a Node.js-focused Full-Stack Software Engineer. I work with Node.js, Express.js, React.js, databases, and cloud tooling to build practical applications. I am especially interested in backend architecture, payment integrations, reliable APIs, and AI-assisted developer tools.",
       "color": "#182a43",
       "foil": "#c87046",
       "motifKey": "brackets",
@@ -74,16 +95,16 @@
           "value": "Amroha, Uttar Pradesh, India"
         },
         {
-          "label": "Role",
-          "value": "Full-Stack Software Engineer"
-        },
-        {
-          "label": "Focus",
-          "value": "Backend, APIs, cloud, AI tooling"
-        },
-        {
           "label": "Education",
           "value": "B.Tech CSE, 2024–2028"
+        },
+        {
+          "label": "Engineering focus",
+          "value": "Node.js, Express.js, REST APIs"
+        },
+        {
+          "label": "Exploring",
+          "value": "Cloud-native tools and multi-agent AI"
         }
       ],
       "chapters": [
@@ -91,7 +112,20 @@
         "Backend-first engineering",
         "Building useful systems"
       ],
-      "items": []
+      "items": [
+        {
+          "label": "Approach",
+          "value": "Practical, maintainable engineering"
+        },
+        {
+          "label": "Interests",
+          "value": "Backend systems, cloud infrastructure, AI tooling"
+        },
+        {
+          "label": "Learning",
+          "value": "System design, deployment, reliability, and applied AI"
+        }
+      ]
     },
     {
       "id": "projects",
@@ -99,8 +133,8 @@
       "roman": "II",
       "title": "Projects",
       "discipline": "Selected work",
-      "note": "Cloud-based developer tooling, multi-agent AI platforms, and full-stack systems.",
-      "deck": "These projects span cloud sandbox environments, real-time terminal interaction, multi-model AI orchestration, and production-grade eCommerce. Built with modern microservice architectures and containerized deployments.",
+      "note": "Cloud development environments, multi-model AI, and full-stack product engineering.",
+      "deck": "My projects let me explore the full path from interface to infrastructure: interactive development environments, multi-LLM orchestration, and a full-stack commerce application. Each project has been an opportunity to practice API design, state management, integrations, deployment, and debugging across system boundaries.",
       "color": "#c24d24",
       "foil": "#efc16d",
       "motifKey": "paths",
@@ -125,79 +159,82 @@
       "specs": [
         {
           "label": "Primary stack",
-          "value": "Node.js, React.js, Express.js"
+          "value": "Node.js, Express.js, React.js"
         },
         {
-          "label": "Infra",
+          "label": "Infrastructure",
           "value": "Docker, Kubernetes, AWS, Render"
         },
         {
-          "label": "AI work",
-          "value": "LangGraph, Multi-Agent LLMs"
+          "label": "AI tooling",
+          "value": "LangGraph and multiple LLM APIs"
         },
         {
-          "label": "Repos",
+          "label": "Code",
           "value": "github.com/Suryansh10-ctrl"
         }
       ],
       "chapters": [
-        "Cloud Code Sandbox & AI",
-        "AI-Arena Multi-Agent Chatbot",
+        "Cloud Code Sandbox & AI Platform",
+        "AI-Arena Multi-LLM Chatbot",
         "SNITCH E-Commerce Website"
       ],
       "items": [
         {
           "title": "Cloud-Based Code Sandbox & AI Platform",
-          "summary": "Full-stack cloud-based development platform with an interactive terminal, AI orchestration layer with multiple LLMs, and Kubernetes-based containerized microservices.",
-          "role": "Full Stack Engineer",
-          "stack": "React.js, Node.js, Socket.IO, JWT, MongoDB, MISTRAL API, Docker, Kubernetes, LangGraph",
+          "summary": "A cloud-based development platform concept combining an interactive terminal, AI orchestration, and Kubernetes-managed sandbox workloads.",
+          "role": "Full-Stack Engineer",
+          "stack": "React.js, Node.js, Socket.IO, node-pty, MongoDB, Redis, Mistral API, LangGraph, Docker, Kubernetes",
           "year": "2026",
-          "status": "Completed",
+          "status": "Project",
           "url": "",
-          "source": "https://github.com/Suryansh10-ctrl",
+          "source": "https://github.com/Suryansh10-ctrl/Capstone",
           "image": "",
           "imageAlt": "Screenshot of the cloud code sandbox and AI platform",
           "bullets": [
-            "Architected a full-stack cloud-based development platform using React.js, Node.js, Docker, and Kubernetes.",
-            "Developed a real-time terminal using Socket.IO and node-pty, enabling interactive command execution and live terminal.",
-            "Integrated an AI orchestration layer using LangGraph and multiple LLMs, supporting AI-assisted development.",
-            "Implemented a Kubernetes-based routing and resource-management system with Ingress, RBAC, automated sandbox cleanup, and containerized microservices for scalable deployment."
-          ]
+            "Designed a full-stack development environment using React.js and Node.js, with containerized services for sandbox workloads.",
+            "Implemented real-time terminal interaction with Socket.IO and node-pty for interactive command execution.",
+            "Explored AI-assisted development through a LangGraph orchestration layer and LLM API integration.",
+            "Worked on Kubernetes routing and resource management, including Ingress, RBAC, and automated sandbox cleanup."
+          ],
+          "learning": "Connecting frontend interaction, backend orchestration, and container infrastructure requires clear service boundaries and careful handling of lifecycle, readiness, and failure states."
         },
         {
-          "title": "AI-Arena – A Multi Agent Chatbot",
-          "summary": "Full-stack LLM comparison platform enabling real-time side-by-side evaluation of multiple AI models with multi-LLM orchestration and intelligent AI judge recommendations.",
-          "role": "Full Stack Engineer",
-          "stack": "React.js, Node.js, MongoDB, REST APIs, LangGraph, Multiple API Keys (Gemini, Mistral, Cohere)",
+          "title": "AI-Arena — Multi-LLM Comparison Platform",
+          "summary": "A full-stack platform for comparing responses from multiple language models and using an AI judge to assess response quality.",
+          "role": "Full-Stack Engineer",
+          "stack": "React.js, Node.js, MongoDB, REST APIs, LangGraph, Gemini, Mistral, Cohere",
           "year": "2026",
-          "status": "Completed",
+          "status": "Project",
           "url": "",
-          "source": "https://github.com/Suryansh10-ctrl",
+          "source": "https://github.com/Suryansh10-ctrl/AI-Arena",
           "image": "",
-          "imageAlt": "Screenshot of AI-Arena multi agent chatbot",
+          "imageAlt": "Screenshot of the AI-Arena multi-LLM comparison platform",
           "bullets": [
-            "Built a full-stack LLM comparison platform enabling real-time side-by-side evaluation of multiple AI models.",
-            "Implemented LangGraph-based multi-LLM orchestration integrating Gemini, Mistral, and Cohere for parallel response generation.",
-            "Developed an AI judge system to analyze model responses and provide intelligent recommendations based on response quality."
-          ]
+            "Built a full-stack interface for side-by-side evaluation of responses from multiple AI models.",
+            "Integrated Gemini, Mistral, and Cohere through a LangGraph-based orchestration workflow.",
+            "Developed an AI judge step to compare generated responses and provide a recommendation based on response quality."
+          ],
+          "learning": "Model comparison makes trade-offs visible: response quality, latency, provider reliability, and consistency can vary by prompt and model."
         },
         {
-          "title": "SNITCH – E-Commerce Website",
-          "summary": "Responsive MERN-based eCommerce platform with product browsing, search, filtering, cart, wishlist, Razorpay payment gateway, and an Admin dashboard.",
-          "role": "Full Stack Engineer",
-          "stack": "React.js, Express.js, Tailwind CSS, Node.js, Redux Toolkit, Razorpay, REST APIs, JWT, Google OAuth",
+          "title": "SNITCH — E-Commerce Web Application",
+          "summary": "A responsive MERN application with product discovery, cart and wishlist flows, order management, authentication, and payment integration.",
+          "role": "Full-Stack Engineer",
+          "stack": "React.js, Node.js, Express.js, MongoDB, Redux Toolkit, Tailwind CSS, REST APIs, JWT, Google OAuth, Razorpay",
           "year": "2026",
-          "status": "Completed",
+          "status": "Project",
           "url": "",
-          "source": "https://github.com/Suryansh10-ctrl",
+          "source": "https://github.com/Suryansh10-ctrl/Snitch",
           "image": "",
-          "imageAlt": "Screenshot of SNITCH eCommerce website",
+          "imageAlt": "Screenshot of the SNITCH e-commerce application",
           "bullets": [
-            "Engineered a responsive MERN-based eCommerce platform with product browsing, search, filtering, cart, wishlist, and order management.",
-            "Implemented JWT authentication, Google OAuth, and role-based access control for secure User/Admin authentication and protected routes.",
-            "Developed reusable React.js components with Redux Toolkit for efficient state management across products, cart, wishlist, and user sessions.",
-            "Integrated Razorpay payment gateway and built an Admin dashboard for product, inventory, user, order, and sales management."
-          ]
+            "Built product browsing, search, filtering, cart, wishlist, and order-management workflows in a responsive MERN application.",
+            "Implemented JWT authentication, Google OAuth, and role-based access controls for user and admin flows.",
+            "Used reusable React components and Redux Toolkit to manage product, cart, wishlist, and session state.",
+            "Integrated Razorpay and developed admin workflows for product, inventory, user, order, and sales management."
+          ],
+          "learning": "Commerce workflows depend on consistent state, secure authorization, and careful handling of payment and order status."
         }
       ]
     },
@@ -207,8 +244,8 @@
       "roman": "III",
       "title": "Skills",
       "discipline": "Craft and tools",
-      "note": "Backend-first, with modern frontend frameworks and a robust cloud and DevOps practice.",
-      "deck": "My core competency is backend engineering with Node.js and Express.js, building scalable microservices and RESTful APIs. I build responsive frontends with React.js and Next.js, work with MongoDB, PostgreSQL, and Redis, and deploy via Docker, Kubernetes, and AWS.",
+      "note": "Backend-focused, supported by frontend, data, cloud, and AI tooling.",
+      "deck": "My core focus is backend development with Node.js and Express.js, REST API design, integrations, and database-backed workflows. I also build interfaces with React.js and Next.js and have hands-on project experience with Docker, Kubernetes, AWS, and multi-LLM orchestration.",
       "color": "#afc400",
       "foil": "#171a16",
       "motifKey": "caret",
@@ -233,7 +270,7 @@
       "specs": [
         {
           "label": "Backend",
-          "value": "Node.js, Express.js, Microservices"
+          "value": "Node.js, Express.js, REST APIs"
         },
         {
           "label": "Frontend",
@@ -241,17 +278,17 @@
         },
         {
           "label": "Data",
-          "value": "MongoDB, PostgreSQL, MySQL, Redis"
+          "value": "MongoDB, MySQL, PostgreSQL, Redis"
         },
         {
-          "label": "Ops",
-          "value": "Docker, Kubernetes, AWS, Git"
+          "label": "Cloud & DevOps",
+          "value": "Docker, Kubernetes, AWS"
         }
       ],
       "chapters": [
-        "Core Languages & Backend",
-        "Frontend & UI Systems",
-        "Databases, Cloud & DevOps"
+        "Languages & Backend",
+        "Frontend & UI",
+        "Data, Cloud & AI"
       ],
       "items": [
         {
@@ -259,25 +296,25 @@
           "skills": [
             "Java",
             "JavaScript",
-            "TypeScript",
             "SQL",
             "Python",
             "C++"
           ]
         },
         {
-          "area": "Backend & Microservices",
+          "area": "Backend & API Development",
           "skills": [
             "Node.js",
             "Express.js",
             "REST APIs",
-            "Microservices Architecture",
-            "Payment Microservices",
-            "Webhook Processing"
+            "Microservices concepts",
+            "Payment integrations",
+            "Webhook processing",
+            "API validation and error handling"
           ]
         },
         {
-          "area": "Frontend & UI",
+          "area": "Frontend",
           "skills": [
             "React.js",
             "Next.js",
@@ -309,25 +346,30 @@
           ]
         },
         {
-          "area": "Developer Tools & AI",
+          "area": "AI & Developer Tools",
           "skills": [
-            "Git & GitHub",
+            "LangGraph",
+            "Gemini API",
+            "Mistral API",
+            "Cohere API",
+            "Git",
+            "GitHub",
             "Postman",
-            "Docker Desktop",
             "VS Code",
             "IntelliJ IDEA",
-            "LangGraph & Multi-LLM APIs"
+            "Docker Desktop"
           ]
         },
         {
-          "area": "Core Engineering Concepts",
+          "area": "Computer Science Foundations",
           "skills": [
-            "Data Structures & Algorithms (DSA)",
-            "Object-Oriented Programming (OOP)",
-            "Database Management Systems (DBMS)",
+            "Data Structures and Algorithms",
+            "Object-Oriented Programming",
+            "DBMS",
             "Operating Systems",
             "Computer Networks",
-            "SDLC & System Design"
+            "SDLC",
+            "System design fundamentals"
           ]
         }
       ]
@@ -338,8 +380,8 @@
       "roman": "IV",
       "title": "Experience",
       "discipline": "Work and practice",
-      "note": "Software Developer Intern at CodeAlpha & academic engineering practice.",
-      "deck": "Experience developing production-grade payment microservices, REST APIs, and asynchronous webhook pipelines at CodeAlpha, alongside rigorous project delivery and academic study at COER University.",
+      "note": "Software development internship and ongoing engineering practice.",
+      "deck": "During my software development internship, I worked on full-stack services and payment-microservice workflows, with attention to API reliability, validation, database performance, and asynchronous webhook processing. I continue to apply these practices in independent cloud and AI projects.",
       "color": "#1537a1",
       "foil": "#dbe8f1",
       "motifKey": "orbits",
@@ -363,24 +405,24 @@
       },
       "specs": [
         {
-          "label": "Current",
-          "value": "B.Tech Student (2024–2028)"
+          "label": "Education",
+          "value": "B.Tech CSE, 2024–2028"
         },
         {
           "label": "Internship",
-          "value": "Software Developer Intern | CodeAlpha"
+          "value": "Software Developer Intern"
         },
         {
-          "label": "Domain",
-          "value": "Payment Microservice, Node.js"
+          "label": "Focus",
+          "value": "Payment microservices and backend services"
         },
         {
           "label": "Open to",
-          "value": "Internships, Full-Time Roles"
+          "value": "Backend-focused internships and engineering roles"
         }
       ],
       "chapters": [
-        "CodeAlpha Internship",
+        "Software Development Internship",
         "Payment Microservice",
         "Academic Practice"
       ],
@@ -389,24 +431,24 @@
           "org": "CodeAlpha",
           "title": "Software Developer Intern — Payment Microservice",
           "start": "Aug 2026",
-          "end": "Sep 2026 | Remote",
+          "end": "Sep 2026 · Remote",
           "bullets": [
-            "Collaborated on and optimized production-grade full-stack services adopted by 3+ teams, improving system performance by 20% and enabling scalable capabilities for future product launches.",
-            "Developed and enhanced scalable web applications using React.js, Node.js, and Express.js, supporting multiple products and business workflows.",
-            "Built and integrated RESTful APIs with optimized database queries and reusable frontend components for maintainable full-stack architecture.",
-            "Implemented secure authentication, authorization, API validation, and error handling, ensuring reliable and secure application workflows.",
-            "Collaborated with cross-functional teams to debug, optimize, and deploy production features, improving application performance.",
-            "Reduced system latency by implementing asynchronous background processing for webhooks, preventing timeout and duplicate retry issues."
+            "Contributed to production-grade full-stack services used by 3+ teams; the resume reports a 20% improvement in system performance.",
+            "Developed and enhanced web application workflows using React.js, Node.js, and Express.js across multiple products.",
+            "Built REST APIs, optimized database queries, and created reusable frontend components for maintainable application architecture.",
+            "Implemented authentication, authorization, request validation, and error handling for secure application workflows.",
+            "Worked with cross-functional teammates to debug, optimize, and deploy production features.",
+            "Implemented asynchronous background processing for webhooks to reduce latency and help prevent timeout and duplicate-retry issues."
           ]
         },
         {
           "org": "COER University",
-          "title": "B.Tech Student in Computer Science and Engineering",
+          "title": "B.Tech Student — Computer Science and Engineering",
           "start": "2024",
-          "end": "Present",
+          "end": "2028",
           "bullets": [
-            "Pursuing a Bachelor of Technology in Computer Science and Engineering (2024–2028).",
-            "Architected full-stack cloud and AI systems independently alongside coursework, with focus on high concurrency and reliability."
+            "Pursuing a Bachelor of Technology in Computer Science and Engineering at COER University, Roorkee, Uttarakhand.",
+            "Builds independent full-stack, cloud, and AI projects alongside coursework, applying concepts from databases, networking, operating systems, and software engineering."
           ]
         }
       ]
@@ -417,8 +459,8 @@
       "roman": "V",
       "title": "Education",
       "discipline": "Academic background",
-      "note": "Computer Science and Engineering at COER University & Schooling at HSS Public School.",
-      "deck": "Pre-final year B.Tech in Computer Science and Engineering at COER University, Roorkee, Uttarakhand. Grounded in core computer science disciplines including data structures, algorithms, databases, operating systems, and computer networks.",
+      "note": "Computer Science and Engineering, supported by a science and computing foundation.",
+      "deck": "I'm pursuing a B.Tech in Computer Science and Engineering at COER University. My academic foundation complements practical project work in backend development, databases, cloud deployment, and AI integrations.",
       "color": "#c83222",
       "foil": "#efb0aa",
       "motifKey": "modules",
@@ -442,24 +484,24 @@
       },
       "specs": [
         {
-          "label": "Institution",
+          "label": "University",
           "value": "COER University, Roorkee"
         },
         {
           "label": "Degree",
-          "value": "B.Tech, Computer Science"
+          "value": "B.Tech, Computer Science and Engineering"
         },
         {
           "label": "Duration",
           "value": "2024–2028"
         },
         {
-          "label": "Schooling",
-          "value": "HSS Public School (2023–2024)"
+          "label": "School",
+          "value": "HSS Public School, Hasanpur"
         }
       ],
       "chapters": [
-        "Undergraduate B.Tech",
+        "Undergraduate Study",
         "Higher Secondary Schooling",
         "Core Computer Science"
       ],
@@ -474,12 +516,12 @@
             "Database Management Systems",
             "Operating Systems",
             "Computer Networks",
-            "Software Engineering & SDLC"
+            "Software Engineering and SDLC"
           ]
         },
         {
           "institution": "HSS Public School, Hasanpur, Uttar Pradesh",
-          "programme": "Class XII (Senior Secondary Examination)",
+          "programme": "Class XII — Senior Secondary Examination",
           "start": "2023",
           "end": "2024",
           "coursework": [
@@ -495,10 +537,10 @@
       "id": "achievements",
       "volumeLabel": "Volume VI",
       "roman": "VI",
-      "title": "Achievements",
-      "discipline": "Recognition and credentials",
-      "note": "Professional certifications in Full-Stack Engineering, Data Structures & Algorithms, and Problem Solving.",
-      "deck": "Validated engineering and algorithmic competency through comprehensive live cohort certification and rigorous problem-solving practice.",
+      "title": "Certifications & Practice",
+      "discipline": "Learning and credentials",
+      "note": "Structured full-stack learning and continued problem-solving practice.",
+      "deck": "I combine project-based learning with structured coursework and algorithm practice. These credentials reflect learning milestones; I keep this section focused on verifiable courses and platforms rather than unsupported awards or rankings.",
       "color": "#da3b2f",
       "foil": "#ff8eab",
       "motifKey": "frames",
@@ -522,26 +564,26 @@
       },
       "specs": [
         {
+          "label": "Full-stack",
+          "value": "Code For Success"
+        },
+        {
+          "label": "DSA",
+          "value": "Striver A2Z Series"
+        },
+        {
+          "label": "Practice",
+          "value": "HackerRank"
+        },
+        {
           "label": "Projects",
-          "value": "3 Production Applications"
-        },
-        {
-          "label": "GitHub",
-          "value": "github.com/Suryansh10-ctrl"
-        },
-        {
-          "label": "Certs",
-          "value": "Code For Success, Striver A2Z"
-        },
-        {
-          "label": "Problem Solving",
-          "value": "HackerRank Certified"
+          "value": "Full-stack, cloud, and AI systems"
         }
       ],
       "chapters": [
-        "Certifications & Workshops",
+        "Courses & Workshops",
         "Engineering Milestones",
-        "Coding Platforms"
+        "Problem-Solving Practice"
       ],
       "items": [
         {
@@ -551,15 +593,15 @@
           "url": ""
         },
         {
-          "title": "Data Structures & Algorithms – Striver A2Z Series",
+          "title": "Data Structures & Algorithms — Striver A2Z Series",
           "issuer": "takeUforward",
           "date": "2026",
           "url": ""
         },
         {
-          "title": "Problem Solving & Core Algorithms",
+          "title": "Problem Solving Practice",
           "issuer": "HackerRank",
-          "date": "Active Practice",
+          "date": "Ongoing",
           "url": "https://www.hackerrank.com/profile/ss8737021"
         }
       ]
@@ -570,8 +612,8 @@
       "roman": "VII",
       "title": "Contact",
       "discipline": "Get in touch",
-      "note": "Open to backend-focused internships, full-time software engineering roles, and collaborative projects.",
-      "deck": "I'm currently open to backend-focused internships, freelance engagements, and collaborative side projects. The best way to reach me is by email or phone. You can also find my work on GitHub. My resume is available to download below.",
+      "note": "Open to backend-focused internships, software engineering opportunities, and collaborative projects.",
+      "deck": "I'm interested in opportunities where I can contribute to backend services, APIs, integrations, and full-stack product work while learning from experienced engineers. Reach me by email, explore my code on GitHub, or connect with me on LinkedIn.",
       "color": "#78a7bd",
       "foil": "#e4e7e5",
       "motifKey": "compass",
@@ -608,13 +650,13 @@
         },
         {
           "label": "Resume",
-          "value": "Download Resume (DOCX)"
+          "value": "Download Resume (PDF or DOCX)"
         }
       ],
       "chapters": [
         "Reach out",
-        "Find my work",
-        "Download resume"
+        "Explore my work",
+        "Resume"
       ],
       "items": []
     }

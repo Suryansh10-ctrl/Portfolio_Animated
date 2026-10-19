@@ -721,14 +721,14 @@ ${portfolio.books
 
 // ── 11b. Typography and UI sizing enhancements ──────────────────────────────
 const TYPOGRAPHY_OVERRIDE = `
-    /* ── Typography & UI sizing enhancements ─────────────────────── */
+    /* ── Typography & UI sizing enhancements (scaled slightly down for elegance) ── */
     .editorial-identity strong {
-      font-size: clamp(1.35rem, 2vw, 1.95rem) !important;
+      font-size: clamp(1.15rem, 1.6vw, 1.55rem) !important;
     }
 
     .editorial-identity span,
     .editorial-index span {
-      font-size: clamp(0.78rem, 1.05vw, 0.94rem) !important;
+      font-size: clamp(0.68rem, 0.88vw, 0.82rem) !important;
       letter-spacing: 0.12em !important;
       line-height: 1.5 !important;
     }
@@ -737,12 +737,12 @@ const TYPOGRAPHY_OVERRIDE = `
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      gap: 6px !important;
+      gap: 5px !important;
     }
 
     .counter {
       display: inline-block !important;
-      font-size: clamp(0.92rem, 1.15vw, 1.12rem) !important;
+      font-size: clamp(0.78rem, 0.95vw, 0.94rem) !important;
       font-weight: 600 !important;
       letter-spacing: 0.14em !important;
       color: var(--ink) !important;
@@ -752,87 +752,112 @@ const TYPOGRAPHY_OVERRIDE = `
       z-index: 10 !important;
     }
 
+    .selection__title {
+      font-size: clamp(1.45rem, 2.5vw, 2.5rem) !important;
+      line-height: 1.05 !important;
+    }
+
     .selection__note {
       display: block !important;
-      font-size: clamp(0.98rem, 1.3vw, 1.22rem) !important;
-      max-width: 560px !important;
-      margin-top: 10px !important;
-      line-height: 1.55 !important;
+      font-size: clamp(0.85rem, 1.08vw, 1.02rem) !important;
+      max-width: 520px !important;
+      margin-top: 8px !important;
+      line-height: 1.5 !important;
       color: var(--ink-soft) !important;
     }
 
     .browse-actions {
-      gap: 10px !important;
+      gap: 8px !important;
       align-items: center !important;
       align-self: end !important;
       padding-bottom: 2px !important;
     }
 
     .round-button {
-      width: 52px !important;
-      height: 52px !important;
+      width: 44px !important;
+      height: 44px !important;
       border: 1px solid rgba(43, 34, 27, 0.35) !important;
     }
 
     .round-button svg {
-      width: 22px !important;
-      height: 22px !important;
-      stroke-width: 1.6 !important;
+      width: 18px !important;
+      height: 18px !important;
+      stroke-width: 1.5 !important;
     }
 
     .text-button {
-      min-height: 52px !important;
-      padding: 0 28px !important;
-      font-size: 0.88rem !important;
+      min-height: 44px !important;
+      padding: 0 22px !important;
+      font-size: 0.76rem !important;
       font-weight: 600 !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 0.12em !important;
       border: 1.5px solid color-mix(in srgb, var(--ink) 42%, transparent) !important;
       border-radius: 999px !important;
     }
 
     .close-button {
-      width: 48px !important;
-      height: 48px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
 
     .close-button svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke-width: 1.6 !important;
+      width: 17px !important;
+      height: 17px !important;
+      stroke-width: 1.5 !important;
     }
 
     .page-button {
-      width: 48px !important;
-      height: 48px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
 
     .page-button svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke-width: 1.6 !important;
+      width: 17px !important;
+      height: 17px !important;
+      stroke-width: 1.5 !important;
+    }
+
+    .eyebrow {
+      font-size: 0.62rem !important;
+      letter-spacing: 0.12em !important;
+      margin-bottom: 12px !important;
+    }
+
+    .detail-title {
+      font-size: clamp(2rem, 3.8vw, 3.8rem) !important;
+      line-height: 0.98 !important;
     }
 
     .detail-deck {
-      font-size: clamp(1.1rem, 1.45vw, 1.35rem) !important;
-      line-height: 1.6 !important;
+      font-size: clamp(0.92rem, 1.18vw, 1.08rem) !important;
+      line-height: 1.55 !important;
+      margin-top: 16px !important;
+    }
+
+    .detail-deck::first-letter {
+      font-size: 2.3em !important;
+      margin: 4px 6px 0 0 !important;
+      line-height: 0.76 !important;
     }
 
     .meta-list dt {
-      font-size: 0.78rem !important;
+      font-size: 0.68rem !important;
+      letter-spacing: 0.12em !important;
     }
 
     .meta-list dd {
-      font-size: 0.92rem !important;
+      font-size: 0.82rem !important;
+      line-height: 1.45 !important;
       word-break: break-word !important;
     }
 
     /* ── Detail Panel Box Width Expansion & Overflow Fix ──────── */
     .detail-panel {
-      width: min(52vw, 680px) !important;
+      width: min(50vw, 640px) !important;
       max-height: 86vh !important;
       overflow-x: hidden !important;
       overflow-y: auto !important;
-      padding-right: 28px !important;
+      padding: clamp(22px, 2.5vw, 36px) !important;
       scrollbar-width: thin !important;
       scrollbar-color: rgba(244, 238, 230, 0.25) transparent !important;
     }
@@ -856,24 +881,24 @@ const TYPOGRAPHY_OVERRIDE = `
       flex-wrap: wrap !important;
       align-items: center !important;
       justify-content: space-between !important;
-      gap: 14px !important;
-      margin-top: 24px !important;
+      gap: 12px !important;
+      margin-top: 20px !important;
     }
 
     .detail-buttons {
       display: flex !important;
       flex-wrap: wrap !important;
       align-items: center !important;
-      gap: 12px !important;
+      gap: 10px !important;
       margin-left: auto !important;
     }
 
     .meta-list {
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      gap: 14px 28px !important;
-      margin-top: 20px !important;
-      margin-bottom: 20px !important;
+      gap: 12px 24px !important;
+      margin-top: 18px !important;
+      margin-bottom: 18px !important;
     }
 
     .spec-link {
@@ -900,7 +925,7 @@ const TYPOGRAPHY_OVERRIDE = `
 
     @media (max-width: 960px) {
       .detail-panel {
-        width: min(92vw, 620px) !important;
+        width: min(92vw, 600px) !important;
         max-height: 80vh !important;
         right: 18px !important;
       }
@@ -913,10 +938,10 @@ const TYPOGRAPHY_OVERRIDE = `
         right: 16px !important;
       }
       .editorial-identity strong {
-        font-size: clamp(1.1rem, 3.8vw, 1.45rem) !important;
+        font-size: clamp(0.98rem, 3.4vw, 1.25rem) !important;
       }
       .editorial-identity span {
-        font-size: 0.72rem !important;
+        font-size: 0.65rem !important;
         letter-spacing: 0.08em !important;
         max-width: 220px !important;
         line-height: 1.35 !important;
@@ -931,11 +956,11 @@ const TYPOGRAPHY_OVERRIDE = `
         gap: 2px !important;
       }
       .counter {
-        font-size: 0.8rem !important;
+        font-size: 0.72rem !important;
         margin-bottom: 0 !important;
       }
       .selection__title {
-        font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+        font-size: clamp(1.22rem, 4.8vw, 1.55rem) !important;
         line-height: 1.12 !important;
       }
       .selection__note {
@@ -943,24 +968,24 @@ const TYPOGRAPHY_OVERRIDE = `
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
-        font-size: 0.82rem !important;
+        font-size: 0.74rem !important;
         line-height: 1.4 !important;
         max-width: 100% !important;
         margin-top: 4px !important;
       }
       .browse-actions {
-        gap: 8px !important;
+        gap: 6px !important;
         align-self: flex-end !important;
         padding-bottom: 0 !important;
       }
       .round-button {
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
       }
       .round-button svg {
-        width: 18px !important;
-        height: 18px !important;
+        width: 16px !important;
+        height: 16px !important;
       }
       .microcopy {
         display: none !important;
@@ -980,38 +1005,38 @@ const TYPOGRAPHY_OVERRIDE = `
         bottom: 10px !important;
         top: auto !important;
         max-height: 80vh !important;
-        padding: 22px 18px 22px 18px !important;
+        padding: 20px 16px !important;
         border-radius: 16px !important;
         box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.65) !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
       }
       .detail-title {
-        font-size: clamp(1.75rem, 6.5vw, 2.3rem) !important;
+        font-size: clamp(1.5rem, 5.4vw, 1.95rem) !important;
         line-height: 1.15 !important;
       }
       .detail-deck {
-        font-size: 0.92rem !important;
+        font-size: 0.82rem !important;
         line-height: 1.55 !important;
         margin-top: 6px !important;
       }
       .meta-list {
         grid-template-columns: 1fr !important;
-        gap: 10px !important;
-        margin-top: 14px !important;
-        margin-bottom: 16px !important;
+        gap: 8px !important;
+        margin-top: 12px !important;
+        margin-bottom: 14px !important;
       }
       .meta-list dt {
-        font-size: 0.72rem !important;
+        font-size: 0.64rem !important;
       }
       .meta-list dd {
-        font-size: 0.88rem !important;
+        font-size: 0.78rem !important;
       }
       .detail-controls {
         flex-direction: column !important;
         align-items: stretch !important;
-        gap: 10px !important;
-        margin-top: 16px !important;
+        gap: 8px !important;
+        margin-top: 14px !important;
       }
       .detail-buttons {
         width: 100% !important;
@@ -1019,11 +1044,11 @@ const TYPOGRAPHY_OVERRIDE = `
       }
       .text-button {
         width: 100% !important;
-        min-height: 46px !important;
+        min-height: 40px !important;
         justify-content: center !important;
         text-align: center !important;
-        font-size: 0.82rem !important;
-        padding: 0 16px !important;
+        font-size: 0.74rem !important;
+        padding: 0 14px !important;
       }
     }
   </style>`;

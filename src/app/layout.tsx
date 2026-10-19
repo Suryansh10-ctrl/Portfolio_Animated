@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: `${portfolio.person.name} — ${portfolio.collectionEdition}`,
   description: `${portfolio.person.role} · ${portfolio.person.bio}`,
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
     title: `${portfolio.person.name} — ${portfolio.collectionTitle}`,

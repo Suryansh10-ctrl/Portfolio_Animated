@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#171a24">
   <meta
     name="description"
-    content="Suryansh Sharma — Selected work, engineering practice, and learning. Built with Three.js."
+    content="Suryansh Sharma — Selected work, engineering practice, and what I'm learning. Built with Three.js."
   >
   <title>Suryansh Sharma — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1593,14 +1593,14 @@
     }
 
 
-    /* ── Typography & UI sizing enhancements ─────────────────────── */
+    /* ── Typography & UI sizing enhancements (scaled slightly down for elegance) ── */
     .editorial-identity strong {
-      font-size: clamp(1.35rem, 2vw, 1.95rem) !important;
+      font-size: clamp(1.15rem, 1.6vw, 1.55rem) !important;
     }
 
     .editorial-identity span,
     .editorial-index span {
-      font-size: clamp(0.78rem, 1.05vw, 0.94rem) !important;
+      font-size: clamp(0.68rem, 0.88vw, 0.82rem) !important;
       letter-spacing: 0.12em !important;
       line-height: 1.5 !important;
     }
@@ -1609,12 +1609,12 @@
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      gap: 6px !important;
+      gap: 5px !important;
     }
 
     .counter {
       display: inline-block !important;
-      font-size: clamp(0.92rem, 1.15vw, 1.12rem) !important;
+      font-size: clamp(0.78rem, 0.95vw, 0.94rem) !important;
       font-weight: 600 !important;
       letter-spacing: 0.14em !important;
       color: var(--ink) !important;
@@ -1624,87 +1624,112 @@
       z-index: 10 !important;
     }
 
+    .selection__title {
+      font-size: clamp(1.45rem, 2.5vw, 2.5rem) !important;
+      line-height: 1.05 !important;
+    }
+
     .selection__note {
       display: block !important;
-      font-size: clamp(0.98rem, 1.3vw, 1.22rem) !important;
-      max-width: 560px !important;
-      margin-top: 10px !important;
-      line-height: 1.55 !important;
+      font-size: clamp(0.85rem, 1.08vw, 1.02rem) !important;
+      max-width: 520px !important;
+      margin-top: 8px !important;
+      line-height: 1.5 !important;
       color: var(--ink-soft) !important;
     }
 
     .browse-actions {
-      gap: 10px !important;
+      gap: 8px !important;
       align-items: center !important;
       align-self: end !important;
       padding-bottom: 2px !important;
     }
 
     .round-button {
-      width: 52px !important;
-      height: 52px !important;
+      width: 44px !important;
+      height: 44px !important;
       border: 1px solid rgba(43, 34, 27, 0.35) !important;
     }
 
     .round-button svg {
-      width: 22px !important;
-      height: 22px !important;
-      stroke-width: 1.6 !important;
+      width: 18px !important;
+      height: 18px !important;
+      stroke-width: 1.5 !important;
     }
 
     .text-button {
-      min-height: 52px !important;
-      padding: 0 28px !important;
-      font-size: 0.88rem !important;
+      min-height: 44px !important;
+      padding: 0 22px !important;
+      font-size: 0.76rem !important;
       font-weight: 600 !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 0.12em !important;
       border: 1.5px solid color-mix(in srgb, var(--ink) 42%, transparent) !important;
       border-radius: 999px !important;
     }
 
     .close-button {
-      width: 48px !important;
-      height: 48px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
 
     .close-button svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke-width: 1.6 !important;
+      width: 17px !important;
+      height: 17px !important;
+      stroke-width: 1.5 !important;
     }
 
     .page-button {
-      width: 48px !important;
-      height: 48px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
 
     .page-button svg {
-      width: 20px !important;
-      height: 20px !important;
-      stroke-width: 1.6 !important;
+      width: 17px !important;
+      height: 17px !important;
+      stroke-width: 1.5 !important;
+    }
+
+    .eyebrow {
+      font-size: 0.62rem !important;
+      letter-spacing: 0.12em !important;
+      margin-bottom: 12px !important;
+    }
+
+    .detail-title {
+      font-size: clamp(2rem, 3.8vw, 3.8rem) !important;
+      line-height: 0.98 !important;
     }
 
     .detail-deck {
-      font-size: clamp(1.1rem, 1.45vw, 1.35rem) !important;
-      line-height: 1.6 !important;
+      font-size: clamp(0.92rem, 1.18vw, 1.08rem) !important;
+      line-height: 1.55 !important;
+      margin-top: 16px !important;
+    }
+
+    .detail-deck::first-letter {
+      font-size: 2.3em !important;
+      margin: 4px 6px 0 0 !important;
+      line-height: 0.76 !important;
     }
 
     .meta-list dt {
-      font-size: 0.78rem !important;
+      font-size: 0.68rem !important;
+      letter-spacing: 0.12em !important;
     }
 
     .meta-list dd {
-      font-size: 0.92rem !important;
+      font-size: 0.82rem !important;
+      line-height: 1.45 !important;
       word-break: break-word !important;
     }
 
     /* ── Detail Panel Box Width Expansion & Overflow Fix ──────── */
     .detail-panel {
-      width: min(52vw, 680px) !important;
+      width: min(50vw, 640px) !important;
       max-height: 86vh !important;
       overflow-x: hidden !important;
       overflow-y: auto !important;
-      padding-right: 28px !important;
+      padding: clamp(22px, 2.5vw, 36px) !important;
       scrollbar-width: thin !important;
       scrollbar-color: rgba(244, 238, 230, 0.25) transparent !important;
     }
@@ -1728,24 +1753,24 @@
       flex-wrap: wrap !important;
       align-items: center !important;
       justify-content: space-between !important;
-      gap: 14px !important;
-      margin-top: 24px !important;
+      gap: 12px !important;
+      margin-top: 20px !important;
     }
 
     .detail-buttons {
       display: flex !important;
       flex-wrap: wrap !important;
       align-items: center !important;
-      gap: 12px !important;
+      gap: 10px !important;
       margin-left: auto !important;
     }
 
     .meta-list {
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      gap: 14px 28px !important;
-      margin-top: 20px !important;
-      margin-bottom: 20px !important;
+      gap: 12px 24px !important;
+      margin-top: 18px !important;
+      margin-bottom: 18px !important;
     }
 
     .spec-link {
@@ -1772,7 +1797,7 @@
 
     @media (max-width: 960px) {
       .detail-panel {
-        width: min(92vw, 620px) !important;
+        width: min(92vw, 600px) !important;
         max-height: 80vh !important;
         right: 18px !important;
       }
@@ -1785,10 +1810,10 @@
         right: 16px !important;
       }
       .editorial-identity strong {
-        font-size: clamp(1.1rem, 3.8vw, 1.45rem) !important;
+        font-size: clamp(0.98rem, 3.4vw, 1.25rem) !important;
       }
       .editorial-identity span {
-        font-size: 0.72rem !important;
+        font-size: 0.65rem !important;
         letter-spacing: 0.08em !important;
         max-width: 220px !important;
         line-height: 1.35 !important;
@@ -1803,11 +1828,11 @@
         gap: 2px !important;
       }
       .counter {
-        font-size: 0.8rem !important;
+        font-size: 0.72rem !important;
         margin-bottom: 0 !important;
       }
       .selection__title {
-        font-size: clamp(1.4rem, 5.5vw, 1.85rem) !important;
+        font-size: clamp(1.22rem, 4.8vw, 1.55rem) !important;
         line-height: 1.12 !important;
       }
       .selection__note {
@@ -1815,24 +1840,24 @@
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
-        font-size: 0.82rem !important;
+        font-size: 0.74rem !important;
         line-height: 1.4 !important;
         max-width: 100% !important;
         margin-top: 4px !important;
       }
       .browse-actions {
-        gap: 8px !important;
+        gap: 6px !important;
         align-self: flex-end !important;
         padding-bottom: 0 !important;
       }
       .round-button {
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
       }
       .round-button svg {
-        width: 18px !important;
-        height: 18px !important;
+        width: 16px !important;
+        height: 16px !important;
       }
       .microcopy {
         display: none !important;
@@ -1852,38 +1877,38 @@
         bottom: 10px !important;
         top: auto !important;
         max-height: 80vh !important;
-        padding: 22px 18px 22px 18px !important;
+        padding: 20px 16px !important;
         border-radius: 16px !important;
         box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.65) !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
       }
       .detail-title {
-        font-size: clamp(1.75rem, 6.5vw, 2.3rem) !important;
+        font-size: clamp(1.5rem, 5.4vw, 1.95rem) !important;
         line-height: 1.15 !important;
       }
       .detail-deck {
-        font-size: 0.92rem !important;
+        font-size: 0.82rem !important;
         line-height: 1.55 !important;
         margin-top: 6px !important;
       }
       .meta-list {
         grid-template-columns: 1fr !important;
-        gap: 10px !important;
-        margin-top: 14px !important;
-        margin-bottom: 16px !important;
+        gap: 8px !important;
+        margin-top: 12px !important;
+        margin-bottom: 14px !important;
       }
       .meta-list dt {
-        font-size: 0.72rem !important;
+        font-size: 0.64rem !important;
       }
       .meta-list dd {
-        font-size: 0.88rem !important;
+        font-size: 0.78rem !important;
       }
       .detail-controls {
         flex-direction: column !important;
         align-items: stretch !important;
-        gap: 10px !important;
-        margin-top: 16px !important;
+        gap: 8px !important;
+        margin-top: 14px !important;
       }
       .detail-buttons {
         width: 100% !important;
@@ -1891,11 +1916,11 @@
       }
       .text-button {
         width: 100% !important;
-        min-height: 46px !important;
+        min-height: 40px !important;
         justify-content: center !important;
         text-align: center !important;
-        font-size: 0.82rem !important;
-        padding: 0 16px !important;
+        font-size: 0.74rem !important;
+        padding: 0 14px !important;
       }
     }
   </style>
@@ -1917,7 +1942,7 @@
     <header class="editorial-header" aria-label="Collection">
       <div class="editorial-identity">
         <strong>Suryansh Sharma</strong>
-        <span>Selected work, engineering practice, and learning</span>
+        <span>Selected work, engineering practice, and what I'm learning</span>
       </div>
       <div class="editorial-index">
         <span>Portfolio Edition · 2026</span>
@@ -1935,7 +1960,7 @@
         <span class="counter" id="counter">01 / 07</span>
         <div class="selection__copy">
           <h1 class="selection__title" id="selection-title">About</h1>
-          <p class="selection__note" id="selection-note">A full-stack developer focused on backend engineering and useful products.</p>
+          <p class="selection__note" id="selection-note">Backend-first engineering with a full-stack perspective.</p>
         </div>
       </div>
 
@@ -1970,7 +1995,7 @@
       <p class="eyebrow" id="detail-eyebrow">Volume I · Introduction</p>
       <h2 class="detail-title" id="detail-title">About</h2>
       <p class="detail-deck" id="detail-deck">
-        I'm Suryansh Sharma, a pre-final-year B.Tech student (2024–2028) at COER University and a Node.js-focused Full Stack Software Engineer. I specialize in scalable backend architectures with Node.js/Express.js, payment microservices, and modern frontend interfaces with React.js and Next.js.
+        I'm Suryansh Sharma, a pre-final-year B.Tech student at COER University and a Node.js-focused Full-Stack Software Engineer. I work with Node.js, Express.js, React.js, databases, and cloud tooling to build practical applications. I am especially interested in backend architecture, payment integrations, reliable APIs, and AI-assisted developer tools.
       </p>
       <dl class="meta-list">
         <div>
@@ -1978,15 +2003,15 @@
           <dd id="detail-binding">Amroha, Uttar Pradesh, India</dd>
         </div>
         <div>
-          <dt>Role</dt>
-          <dd id="detail-format">Full-Stack Software Engineer</dd>
-        </div>
-        <div>
-          <dt>Focus</dt>
-          <dd id="detail-theme">Backend, APIs, cloud, AI tooling</dd>
-        </div>
-        <div>
           <dt>Education</dt>
+          <dd id="detail-format">B.Tech CSE, 2024–2028</dd>
+        </div>
+        <div>
+          <dt>Engineering focus</dt>
+          <dd id="detail-theme">Node.js, Express.js, REST APIs</dd>
+        </div>
+        <div>
+          <dt>Exploring</dt>
           <dd id="detail-motif">Open brackets</dd>
         </div>
       </dl>
@@ -2017,7 +2042,7 @@
       <div class="fallback__header">
         <div>
           <p class="fallback__kicker">Suryansh Sharma · Portfolio</p>
-          <h2 id="fallback-title">Selected work, engineering practice, and learning.</h2>
+          <h2 id="fallback-title">Selected work, engineering practice, and what I'm learning.</h2>
         </div>
         <p class="fallback__status" id="fallback-status">
           The complete catalog remains readable while the interactive shelf is prepared.
@@ -2029,7 +2054,7 @@
         <article class="fallback-book" style="--book-color:#afc400;--book-foil:#171a16;--book-height:365px"><span>Volume III</span><strong>Skills</strong></article>
         <article class="fallback-book" style="--book-color:#1537a1;--book-foil:#dbe8f1;--book-height:403px"><span>Volume IV</span><strong>Experience</strong></article>
         <article class="fallback-book" style="--book-color:#c83222;--book-foil:#efb0aa;--book-height:355px"><span>Volume V</span><strong>Education</strong></article>
-        <article class="fallback-book" style="--book-color:#da3b2f;--book-foil:#ff8eab;--book-height:377px"><span>Volume VI</span><strong>Achievements</strong></article>
+        <article class="fallback-book" style="--book-color:#da3b2f;--book-foil:#ff8eab;--book-height:377px"><span>Volume VI</span><strong>Certifications & Practice</strong></article>
         <article class="fallback-book" style="--book-color:#78a7bd;--book-foil:#e4e7e5;--book-height:391px"><span>Volume VII</span><strong>Contact</strong></article>
       </div>
       <div class="fallback__footer">
@@ -2059,12 +2084,12 @@
         title: "About",
         roman: "I",
         discipline: "Introduction",
-        note: "A full-stack developer focused on backend engineering and useful products.",
-        deck: "I'm Suryansh Sharma, a pre-final-year B.Tech student (2024–2028) at COER University and a Node.js-focused Full Stack Software Engineer. I specialize in scalable backend architectures with Node.js/Express.js, payment microservices, and modern frontend interfaces with React.js and Next.js.",
+        note: "Backend-first engineering with a full-stack perspective.",
+        deck: "I'm Suryansh Sharma, a pre-final-year B.Tech student at COER University and a Node.js-focused Full-Stack Software Engineer. I work with Node.js, Express.js, React.js, databases, and cloud tooling to build practical applications. I am especially interested in backend architecture, payment integrations, reliable APIs, and AI-assisted developer tools.",
         binding: "Amroha, Uttar Pradesh, India",
-        format: "Full-Stack Software Engineer",
-        theme: "Backend, APIs, cloud, AI tooling",
-        motif: "B.Tech CSE, 2024–2028",
+        format: "B.Tech CSE, 2024–2028",
+        theme: "Node.js, Express.js, REST APIs",
+        motif: "Cloud-native tools and multi-agent AI",
         motifKey: "brackets",
         paletteLabel: "Midnight · bone · copper",
         color: "#182a43",
@@ -2092,11 +2117,11 @@
         title: "Projects",
         roman: "II",
         discipline: "Selected work",
-        note: "Cloud-based developer tooling, multi-agent AI platforms, and full-stack systems.",
-        deck: "These projects span cloud sandbox environments, real-time terminal interaction, multi-model AI orchestration, and production-grade eCommerce. Built with modern microservice architectures and containerized deployments.",
-        binding: "Node.js, React.js, Express.js",
+        note: "Cloud development environments, multi-model AI, and full-stack product engineering.",
+        deck: "My projects let me explore the full path from interface to infrastructure: interactive development environments, multi-LLM orchestration, and a full-stack commerce application. Each project has been an opportunity to practice API design, state management, integrations, deployment, and debugging across system boundaries.",
+        binding: "Node.js, Express.js, React.js",
         format: "Docker, Kubernetes, AWS, Render",
-        theme: "LangGraph, Multi-Agent LLMs",
+        theme: "LangGraph and multiple LLM APIs",
         motif: "github.com/Suryansh10-ctrl",
         motifKey: "paths",
         paletteLabel: "Burnt orange · cream · sand",
@@ -2117,7 +2142,7 @@
         width: 1.1,
         height: 1.46,
         depth: 0.29,
-        chapters: ["Cloud Code Sandbox & AI", "AI-Arena Multi-Agent Chatbot", "SNITCH E-Commerce Website"],
+        chapters: ["Cloud Code Sandbox & AI Platform", "AI-Arena Multi-LLM Chatbot", "SNITCH E-Commerce Website"],
         seed: 22
       },
       {
@@ -2125,12 +2150,12 @@
         title: "Skills",
         roman: "III",
         discipline: "Craft and tools",
-        note: "Backend-first, with modern frontend frameworks and a robust cloud and DevOps practice.",
-        deck: "My core competency is backend engineering with Node.js and Express.js, building scalable microservices and RESTful APIs. I build responsive frontends with React.js and Next.js, work with MongoDB, PostgreSQL, and Redis, and deploy via Docker, Kubernetes, and AWS.",
-        binding: "Node.js, Express.js, Microservices",
+        note: "Backend-focused, supported by frontend, data, cloud, and AI tooling.",
+        deck: "My core focus is backend development with Node.js and Express.js, REST API design, integrations, and database-backed workflows. I also build interfaces with React.js and Next.js and have hands-on project experience with Docker, Kubernetes, AWS, and multi-LLM orchestration.",
+        binding: "Node.js, Express.js, REST APIs",
         format: "React.js, Next.js, Tailwind CSS",
-        theme: "MongoDB, PostgreSQL, MySQL, Redis",
-        motif: "Docker, Kubernetes, AWS, Git",
+        theme: "MongoDB, MySQL, PostgreSQL, Redis",
+        motif: "Docker, Kubernetes, AWS",
         motifKey: "caret",
         paletteLabel: "Citron · ink · off-white",
         color: "#afc400",
@@ -2150,7 +2175,7 @@
         width: 0.92,
         height: 1.52,
         depth: 0.22,
-        chapters: ["Core Languages & Backend", "Frontend & UI Systems", "Databases, Cloud & DevOps"],
+        chapters: ["Languages & Backend", "Frontend & UI", "Data, Cloud & AI"],
         seed: 33
       },
       {
@@ -2158,12 +2183,12 @@
         title: "Experience",
         roman: "IV",
         discipline: "Work and practice",
-        note: "Software Developer Intern at CodeAlpha & academic engineering practice.",
-        deck: "Experience developing production-grade payment microservices, REST APIs, and asynchronous webhook pipelines at CodeAlpha, alongside rigorous project delivery and academic study at COER University.",
-        binding: "B.Tech Student (2024–2028)",
-        format: "Software Developer Intern | CodeAlpha",
-        theme: "Payment Microservice, Node.js",
-        motif: "Internships, Full-Time Roles",
+        note: "Software development internship and ongoing engineering practice.",
+        deck: "During my software development internship, I worked on full-stack services and payment-microservice workflows, with attention to API reliability, validation, database performance, and asynchronous webhook processing. I continue to apply these practices in independent cloud and AI projects.",
+        binding: "B.Tech CSE, 2024–2028",
+        format: "Software Developer Intern",
+        theme: "Payment microservices and backend services",
+        motif: "Backend-focused internships and engineering roles",
         motifKey: "orbits",
         paletteLabel: "Cobalt · sky · silver",
         color: "#1537a1",
@@ -2183,7 +2208,7 @@
         width: 1.08,
         height: 1.68,
         depth: 0.25,
-        chapters: ["CodeAlpha Internship", "Payment Microservice", "Academic Practice"],
+        chapters: ["Software Development Internship", "Payment Microservice", "Academic Practice"],
         seed: 44
       },
       {
@@ -2191,12 +2216,12 @@
         title: "Education",
         roman: "V",
         discipline: "Academic background",
-        note: "Computer Science and Engineering at COER University & Schooling at HSS Public School.",
-        deck: "Pre-final year B.Tech in Computer Science and Engineering at COER University, Roorkee, Uttarakhand. Grounded in core computer science disciplines including data structures, algorithms, databases, operating systems, and computer networks.",
+        note: "Computer Science and Engineering, supported by a science and computing foundation.",
+        deck: "I'm pursuing a B.Tech in Computer Science and Engineering at COER University. My academic foundation complements practical project work in backend development, databases, cloud deployment, and AI integrations.",
         binding: "COER University, Roorkee",
-        format: "B.Tech, Computer Science",
+        format: "B.Tech, Computer Science and Engineering",
         theme: "2024–2028",
-        motif: "HSS Public School (2023–2024)",
+        motif: "HSS Public School, Hasanpur",
         motifKey: "modules",
         paletteLabel: "Vermilion · plum · blush",
         color: "#c83222",
@@ -2216,20 +2241,20 @@
         width: 1,
         height: 1.48,
         depth: 0.3,
-        chapters: ["Undergraduate B.Tech", "Higher Secondary Schooling", "Core Computer Science"],
+        chapters: ["Undergraduate Study", "Higher Secondary Schooling", "Core Computer Science"],
         seed: 55
       },
       {
         id: "achievements",
-        title: "Achievements",
+        title: "Certifications & Practice",
         roman: "VI",
-        discipline: "Recognition and credentials",
-        note: "Professional certifications in Full-Stack Engineering, Data Structures & Algorithms, and Problem Solving.",
-        deck: "Validated engineering and algorithmic competency through comprehensive live cohort certification and rigorous problem-solving practice.",
-        binding: "3 Production Applications",
-        format: "github.com/Suryansh10-ctrl",
-        theme: "Code For Success, Striver A2Z",
-        motif: "HackerRank Certified",
+        discipline: "Learning and credentials",
+        note: "Structured full-stack learning and continued problem-solving practice.",
+        deck: "I combine project-based learning with structured coursework and algorithm practice. These credentials reflect learning milestones; I keep this section focused on verifiable courses and platforms rather than unsupported awards or rankings.",
+        binding: "Code For Success",
+        format: "Striver A2Z Series",
+        theme: "HackerRank",
+        motif: "Full-stack, cloud, and AI systems",
         motifKey: "frames",
         paletteLabel: "Coral · rose · oxblood",
         color: "#da3b2f",
@@ -2249,7 +2274,7 @@
         width: 0.96,
         height: 1.57,
         depth: 0.24,
-        chapters: ["Certifications & Workshops", "Engineering Milestones", "Coding Platforms"],
+        chapters: ["Courses & Workshops", "Engineering Milestones", "Problem-Solving Practice"],
         seed: 66
       },
       {
@@ -2257,12 +2282,12 @@
         title: "Contact",
         roman: "VII",
         discipline: "Get in touch",
-        note: "Open to backend-focused internships, full-time software engineering roles, and collaborative projects.",
-        deck: "I'm currently open to backend-focused internships, freelance engagements, and collaborative side projects. The best way to reach me is by email or phone. You can also find my work on GitHub. My resume is available to download below.",
+        note: "Open to backend-focused internships, software engineering opportunities, and collaborative projects.",
+        deck: "I'm interested in opportunities where I can contribute to backend services, APIs, integrations, and full-stack product work while learning from experienced engineers. Reach me by email, explore my code on GitHub, or connect with me on LinkedIn.",
         binding: "ss8737021@gmail.com",
         format: "github.com/Suryansh10-ctrl",
         theme: "linkedin.com/in/suryan925a98309sh-sharma-/",
-        motif: "Download Resume (DOCX)",
+        motif: "Download Resume (PDF or DOCX)",
         motifKey: "compass",
         paletteLabel: "Icy cyan · navy · aluminum",
         color: "#78a7bd",
@@ -2282,7 +2307,7 @@
         width: 1.12,
         height: 1.63,
         depth: 0.28,
-        chapters: ["Reach out", "Find my work", "Download resume"],
+        chapters: ["Reach out", "Explore my work", "Resume"],
         seed: 77
       }
         ];
@@ -4731,12 +4756,12 @@
 
     // Portfolio: spec label names per book
     const SPEC_LABELS = {
-      "about": ["Based in", "Role", "Focus", "Education"],
-      "projects": ["Primary stack", "Infra", "AI work", "Repos"],
-      "skills": ["Backend", "Frontend", "Data", "Ops"],
-      "experience": ["Current", "Internship", "Domain", "Open to"],
-      "education": ["Institution", "Degree", "Duration", "Schooling"],
-      "achievements": ["Projects", "GitHub", "Certs", "Problem Solving"],
+      "about": ["Based in", "Education", "Engineering focus", "Exploring"],
+      "projects": ["Primary stack", "Infrastructure", "AI tooling", "Code"],
+      "skills": ["Backend", "Frontend", "Data", "Cloud & DevOps"],
+      "experience": ["Education", "Internship", "Focus", "Open to"],
+      "education": ["University", "Degree", "Duration", "School"],
+      "achievements": ["Full-stack", "DSA", "Practice", "Projects"],
       "contact": ["Email", "GitHub", "LinkedIn", "Resume"]
     };
 

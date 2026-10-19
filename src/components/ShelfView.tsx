@@ -240,18 +240,6 @@ export default function ShelfView() {
           </div>
         </div>
 
-        {/* Toggle button */}
-        {mounted && webGLAvailable && (
-          <button
-            type="button"
-            className="text-toggle"
-            onClick={toggleText}
-            aria-controls="text-portfolio"
-            aria-expanded={textVisible}
-          >
-            {textVisible ? "3D shelf" : "View as text"}
-          </button>
-        )}
       </div>
     </div>
   );
