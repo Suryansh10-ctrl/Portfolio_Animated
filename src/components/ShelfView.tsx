@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import type { Book, ProjectItem, ExperienceItem, EducationItem, AchievementItem, SkillItem } from "@/types/portfolio";
+import type { Book, ProjectItem, ExperienceItem, EducationItem, AchievementItem, SkillItem, AboutItem } from "@/types/portfolio";
 import { portfolio } from "@/lib/portfolio";
 
 // ── WebGL detection ───────────────────────────────────────────────────────────
@@ -49,6 +49,18 @@ function TextSection({ book }: { book: Book }) {
 
 function ItemList({ book }: { book: Book }) {
   const p = portfolio;
+  if (book.id === "about" && book.items.length > 0) {
+    return (
+      <ul className="item-list">
+        {(book.items as AboutItem[]).map((item) => (
+          <li key={item.label}>
+            <p className="item-title">{item.label}</p>
+            <p>{item.value}</p>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   if (book.id === "projects") {
     return (
       <ul className="item-list">

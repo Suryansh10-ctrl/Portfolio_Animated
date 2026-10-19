@@ -16,6 +16,11 @@ export interface Palette {
   fill: string;
 }
 
+export interface AboutItem {
+  label: string;
+  value: string;
+}
+
 export interface ProjectItem {
   title: string;
   summary: string;
@@ -28,6 +33,7 @@ export interface ProjectItem {
   image?: string;
   imageAlt?: string;
   bullets?: string[];
+  learning?: string;
 }
 
 export interface SkillItem {
@@ -64,6 +70,7 @@ export type BookItem =
   | ExperienceItem
   | EducationItem
   | AchievementItem
+  | AboutItem
   | Record<string, unknown>;
 
 export interface Book {
@@ -106,6 +113,8 @@ export interface Person {
   location: string;
   bio: string;
   currently: string;
+  aspirations?: string[];
+  workingPrinciples?: string[];
   photos: PersonPhoto[];
   resume: string;
   resumePdf?: string;
@@ -117,11 +126,20 @@ export interface Person {
   };
 }
 
+export interface SiteNarrative {
+  headline: string;
+  intro: string;
+  closing: string;
+  primaryCta?: string;
+  secondaryCta?: string;
+}
+
 export interface PortfolioData {
   _note?: string;
   person: Person;
   collectionTitle: string;
   collectionSubtitle: string;
   collectionEdition: string;
+  siteNarrative?: SiteNarrative;
   books: Book[];
 }

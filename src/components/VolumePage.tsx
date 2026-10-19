@@ -6,6 +6,7 @@ import type {
   ExperienceItem,
   EducationItem,
   AchievementItem,
+  AboutItem,
 } from "@/types/portfolio";
 import { portfolio, getAdjacentBooks, getAllBooks } from "@/lib/portfolio";
 
@@ -201,6 +202,69 @@ export default function VolumePage({ book }: VolumePageProps) {
                     </li>
                   </ul>
                 </div>
+
+                {book.items && book.items.length > 0 && (
+                  <div className="timeline-card" style={{ marginTop: "1.35rem" }}>
+                    <h3 className="timeline-title" style={{ fontSize: "1.05rem", marginBottom: "0.85rem" }}>
+                      Engineering Philosophy
+                    </h3>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0.85rem" }}>
+                      {(book.items as AboutItem[]).map((it) => (
+                        <div
+                          key={it.label}
+                          style={{
+                            background: "rgba(244, 238, 230, 0.03)",
+                            padding: "0.85rem 1rem",
+                            borderRadius: "8px",
+                            border: "1px solid rgba(244, 238, 230, 0.08)",
+                          }}
+                        >
+                          <span
+                            style={{
+                              display: "block",
+                              fontSize: "0.68rem",
+                              textTransform: "uppercase",
+                              letterSpacing: "0.08em",
+                              color: "#b9b4ae",
+                              marginBottom: "0.25rem",
+                            }}
+                          >
+                            {it.label}
+                          </span>
+                          <span style={{ fontSize: "0.84rem", color: "#f4eee6", fontWeight: 500 }}>
+                            {it.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {person.aspirations && person.aspirations.length > 0 && (
+                  <div className="timeline-card" style={{ marginTop: "1.35rem" }}>
+                    <h3 className="timeline-title" style={{ fontSize: "1.05rem", marginBottom: "0.75rem" }}>
+                      Core Aspirations & Growth Focus
+                    </h3>
+                    <ul className="timeline-bullets">
+                      {person.aspirations.map((a, i) => (
+                        <li key={i}>{a}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {person.workingPrinciples && person.workingPrinciples.length > 0 && (
+                  <div className="timeline-card" style={{ marginTop: "1.35rem" }}>
+                    <h3 className="timeline-title" style={{ fontSize: "1.05rem", marginBottom: "0.75rem" }}>
+                      Working Principles
+                    </h3>
+                    <ul className="timeline-bullets">
+                      {person.workingPrinciples.map((wp, i) => (
+                        <li key={i}>{wp}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </section>
             )}
 
@@ -226,6 +290,23 @@ export default function VolumePage({ book }: VolumePageProps) {
                           <li key={i}>{bullet}</li>
                         ))}
                       </ul>
+                    )}
+                    {project.learning && (
+                      <div
+                        style={{
+                          margin: "0.85rem 0 1.15rem 0",
+                          padding: "0.75rem 1rem",
+                          background: "rgba(200, 112, 70, 0.08)",
+                          borderLeft: "3px solid #c87046",
+                          borderRadius: "0 6px 6px 0",
+                          fontSize: "0.82rem",
+                          color: "#d4cec8",
+                          lineHeight: 1.55,
+                        }}
+                      >
+                        <strong style={{ color: "#f4eee6" }}>Key Engineering Takeaway: </strong>
+                        {project.learning}
+                      </div>
                     )}
                     <ul className="project-links">
                       {project.url && (
