@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import type { Book, Person, ProjectItem, ExperienceItem, EducationItem, AchievementItem, SkillItem } from "@/types/portfolio";
+import type { Book, ProjectItem, ExperienceItem, EducationItem, AchievementItem, SkillItem } from "@/types/portfolio";
 import { portfolio } from "@/lib/portfolio";
 
 // ── WebGL detection ───────────────────────────────────────────────────────────
