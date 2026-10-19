@@ -37,6 +37,10 @@ html, body {
   height: 100%;
   border: none;
   display: block;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ── Quick Volume Nav Bar (Floating at top of 3D shelf) ──────────────────── */

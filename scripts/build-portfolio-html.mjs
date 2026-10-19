@@ -16,7 +16,7 @@ import { createHash } from "crypto";
 const PORTFOLIO_JSON = "content/portfolio.json";
 const SOURCE_HTML = "public/landing-pages/complete-shelf-v2.html";
 const OUTPUT_HTML = "public/landing-pages/complete-shelf-portfolio.html";
-const VERSIONED_HTML = "public/landing-pages/shelf-portfolio-v4.html";
+const VERSIONED_HTML = "public/landing-pages/shelf-portfolio-v5.html";
 
 // ── Load inputs ──────────────────────────────────────────────────────────────
 
@@ -1138,6 +1138,260 @@ const TYPOGRAPHY_OVERRIDE = `
   </style>`;
 
 replace("  </style>", TYPOGRAPHY_OVERRIDE, "Inject typography and UI sizing enhancements");
+
+// ── 11c. Smooth Animation & Mobile Performance Optimizations ───────────────
+
+// 1. State variables for touch drag and idle frame tracking
+replaceAll(
+  `    let position = 0;
+    let targetPosition = 0;
+    let selectedIndex = 0;
+    let hoveredIndex = -1;
+    let wheelIdle = 0;`,
+  `    let position = 0;
+    let targetPosition = 0;
+    let selectedIndex = 0;
+    let hoveredIndex = -1;
+    let wheelIdle = 0;
+    let idleFrames = 0;
+    let isDraggingShelf = false;
+    let touchMoved = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchLastX = 0;
+    let touchStartPosition = 0;
+    let touchVelocity = 0;`,
+  "State variables for touch swipe and idle throttling"
+);
+
+// 2. Adaptive WebGLRenderer configuration (adaptive antialias, precision, BasicShadowMap / PCFShadowMap)
+replaceAll(
+  `      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias: true,
+          alpha: true,
+          powerPreference: "high-performance"
+        });
+      } catch (error) {
+        showFallback("WebGL is unavailable in this browser. The complete static catalog remains available.");
+        return;
+      }
+
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 0.9;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;`,
+  `      const isMobileDevice = typeof window !== "undefined" && (
+        window.innerWidth < 820 ||
+        /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+        (navigator.maxTouchPoints && navigator.maxTouchPoints > 1 && window.innerWidth < 1024)
+      );
+
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas,
+          antialias: !isMobileDevice,
+          alpha: true,
+          powerPreference: "high-performance",
+          precision: isMobileDevice ? "mediump" : "highp",
+          stencil: false
+        });
+      } catch (error) {
+        showFallback("WebGL is unavailable in this browser. The complete static catalog remains available.");
+        return;
+      }
+
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 0.9;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = isMobileDevice ? THREE.BasicShadowMap : THREE.PCFShadowMap;`,
+  "Adaptive mobile WebGLRenderer with high-efficiency shadows and antialias"
+);
+
+// 3. Optimize pixel ratio (1.2 max on mobile, 1.5 max on desktop)
+replaceAll(
+  `      renderer.setSize(viewWidth, viewHeight, false);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, viewWidth < 820 ? 1.5 : 2));`,
+  `      renderer.setSize(viewWidth, viewHeight, false);
+      const isMobileScreen = viewWidth < 820 || (navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobileScreen ? 1.2 : 1.5));`,
+  "Optimize mobile and desktop pixelRatio to eliminate fill-rate bottlenecks"
+);
+
+// 4. DirectionalLight shadow map size (512 on mobile, 1024 on desktop)
+replaceAll(
+  `      const key = new THREE.DirectionalLight(0xffe8c2, 1.42);
+      key.name = "shadow-key";
+      key.position.set(-4.6, 7.4, 5.8);
+      key.castShadow = true;
+      key.shadow.mapSize.set(2048, 2048);`,
+  `      const isMobileLight = typeof window !== "undefined" && (window.innerWidth < 820 || /Mobi|Android|iPhone/i.test(navigator.userAgent));
+      const key = new THREE.DirectionalLight(0xffe8c2, 1.42);
+      key.name = "shadow-key";
+      key.position.set(-4.6, 7.4, 5.8);
+      key.castShadow = true;
+      const sMapSize = isMobileLight ? 512 : 1024;
+      key.shadow.mapSize.set(sMapSize, sMapSize);`,
+  "Scale shadow map resolution from 2048 to 1024 on desktop and 512 on mobile"
+);
+
+// 5. Frame render loop with dynamic shadow updates and idle sleep
+replaceAll(
+  `      renderer.render(scene, camera);
+
+      const shelfMoving = Math.abs(position - targetPosition) > 0.0005 || wheelIdle > 0;
+      const shouldContinue = !reducedMotion
+        || mode === "opening"
+        || mode === "closing"
+        || shelfMoving
+        || themeIsMoving;
+      if (shouldContinue && !suspended) requestFrame();`,
+  `      const shelfMoving = Math.abs(position - targetPosition) > 0.0005 || wheelIdle > 0 || isDraggingShelf;
+
+      if (renderer.shadowMap.enabled) {
+        renderer.shadowMap.autoUpdate = shelfMoving || mode !== "hero";
+      }
+
+      renderer.render(scene, camera);
+
+      const shouldContinue = mode === "opening"
+        || mode === "closing"
+        || mode === "detail"
+        || shelfMoving
+        || themeIsMoving
+        || pointerDirty
+        || isDraggingShelf;
+
+      if (shouldContinue) {
+        idleFrames = 0;
+        if (!suspended) requestFrame();
+      } else {
+        if (idleFrames < 24) {
+          idleFrames++;
+          if (!suspended) requestFrame();
+        }
+      }`,
+  "Optimize render loop with idle throttling and dynamic shadow map autoUpdate"
+);
+
+// 6. Skip hover raycasting on touch events
+replaceAll(
+  `    function onPointerMove(event) {
+      setPointerFromEvent(event);
+      positionPointerLabel();
+      requestFrame();
+    }`,
+  `    function onPointerMove(event) {
+      if (event.pointerType === "touch") return;
+      idleFrames = 0;
+      setPointerFromEvent(event);
+      positionPointerLabel();
+      requestFrame();
+    }`,
+  "Skip hover raycasting on touch events"
+);
+
+// 7. Prevent accidental book opening when dragging shelf
+replaceAll(
+  `    function onCanvasClick(event) {
+      if (mode === "detail" && !readingOpen && event.button === 0) {
+        if (!detailPress.allowClick) return;
+        detailPress.allowClick = false;
+        setPointerFromEvent(event);
+        if (!activeBookAtPointer()) return;
+        event.preventDefault();
+        setReadingOpen(true);
+        return;
+      }
+      if (mode !== "hero" || event.button !== 0) return;
+      setPointerFromEvent(event);
+      const clickedBookIndex = bookIndexAtPointer();
+      if (clickedBookIndex < 0) return;
+      event.preventDefault();
+      selectMarker(clickedBookIndex, canvas);
+      openDetail(canvas);
+    }`,
+  `    function onCanvasClick(event) {
+      if (touchMoved) {
+        touchMoved = false;
+        return;
+      }
+      idleFrames = 0;
+      if (mode === "detail" && !readingOpen && event.button === 0) {
+        if (!detailPress.allowClick) return;
+        detailPress.allowClick = false;
+        setPointerFromEvent(event);
+        if (!activeBookAtPointer()) return;
+        event.preventDefault();
+        setReadingOpen(true);
+        return;
+      }
+      if (mode !== "hero" || event.button !== 0) return;
+      setPointerFromEvent(event);
+      const clickedBookIndex = bookIndexAtPointer();
+      if (clickedBookIndex < 0) return;
+      event.preventDefault();
+      selectMarker(clickedBookIndex, canvas);
+      openDetail(canvas);
+    }`,
+  "Prevent book opening if user was swiping the shelf"
+);
+
+// 8. Mobile touch swipe gesture listeners
+replaceAll(
+  `      experience.addEventListener("wheel", onWheel, { passive: false });`,
+  `      experience.addEventListener("wheel", onWheel, { passive: false });
+
+      // ── Smooth mobile touch swipe support ──────────────────
+      canvas.addEventListener("touchstart", (e) => {
+        if (mode !== "hero" || e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchLastX = touchStartX;
+        touchStartPosition = targetPosition;
+        touchVelocity = 0;
+        touchMoved = false;
+        isDraggingShelf = true;
+        idleFrames = 0;
+      }, { passive: true });
+
+      canvas.addEventListener("touchmove", (e) => {
+        if (!isDraggingShelf || mode !== "hero" || e.touches.length !== 1) return;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const dx = currentX - touchStartX;
+        const dy = currentY - touchStartY;
+
+        if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+          touchMoved = true;
+        }
+
+        if (Math.abs(dx) > Math.abs(dy) * 0.7) {
+          if (e.cancelable) e.preventDefault();
+          touchVelocity = (currentX - touchLastX) * 0.003;
+          touchLastX = currentX;
+          targetPosition = touchStartPosition - dx * 0.0028;
+          wheelIdle = 0.12;
+          idleFrames = 0;
+          requestFrame();
+        }
+      }, { passive: false });
+
+      canvas.addEventListener("touchend", () => {
+        if (!isDraggingShelf) return;
+        isDraggingShelf = false;
+        if (touchMoved) {
+          targetPosition = Math.round(targetPosition - touchVelocity * 10);
+          wheelIdle = 0.22;
+          idleFrames = 0;
+          requestFrame();
+        }
+      }, { passive: true });`,
+  "Add native touch drag and swipe listeners for mobile 3D shelf"
+);
 
 // ── 12. Final validation ──────────────────────────────────────────────────────
 
