@@ -16,6 +16,7 @@ import { createHash } from "crypto";
 const PORTFOLIO_JSON = "content/portfolio.json";
 const SOURCE_HTML = "public/landing-pages/complete-shelf-v2.html";
 const OUTPUT_HTML = "public/landing-pages/complete-shelf-portfolio.html";
+const VERSIONED_HTML = "public/landing-pages/shelf-portfolio-v3.html";
 
 // ── Load inputs ──────────────────────────────────────────────────────────────
 
@@ -719,6 +720,89 @@ ${portfolio.books
   "Inject SPEC_LABELS and patch populateDetail for interactive clickable spec links"
 );
 
+// ── 11a-2. Base typography and UI scale refinements ─────────────────────────
+replaceAll(
+  `    .editorial-identity strong {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }`,
+  `    .editorial-identity strong {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }`,
+  "Scale base editorial-identity strong"
+);
+
+replaceAll(
+  `    .editorial-identity span,
+    .editorial-index span {
+      color: var(--ink-soft);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      transition: color 520ms var(--ease-out);
+    }`,
+  `    .editorial-identity span,
+    .editorial-index span {
+      color: var(--ink-soft);
+      font-size: clamp(0.68rem, 0.88vw, 0.82rem);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      transition: color 520ms var(--ease-out);
+    }`,
+  "Scale base editorial-identity span"
+);
+
+replaceAll(
+  `    .selection__title {
+      font-size: clamp(2rem, 3.4vw, 3.75rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 0.9;
+    }`,
+  `    .selection__title {
+      font-size: clamp(1.45rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.05;
+    }`,
+  "Scale base selection__title"
+);
+
+replaceAll(
+  `    .selection__note {
+      display: block;
+      max-width: 420px;
+      margin-top: 10px;
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+      letter-spacing: 0.01em;
+      line-height: 1.45;
+      transition: color 520ms var(--ease-out);
+    }`,
+  `    .selection__note {
+      display: block;
+      max-width: 520px;
+      margin-top: 8px;
+      color: var(--ink-soft);
+      font-size: clamp(0.85rem, 1.08vw, 1.02rem);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      transition: color 520ms var(--ease-out);
+    }`,
+  "Scale base selection__note"
+);
+
 // ── 11b. Typography and UI sizing enhancements ──────────────────────────────
 const TYPOGRAPHY_OVERRIDE = `
     /* ── Typography & UI sizing enhancements (scaled slightly down for elegance) ── */
@@ -1093,5 +1177,7 @@ if (violations.length > 0) {
 // ── 13. Write output ──────────────────────────────────────────────────────────
 
 writeFileSync(OUTPUT_HTML, html, "utf8");
+writeFileSync(VERSIONED_HTML, html, "utf8");
+
 const outputHash = createHash("sha256").update(html).digest("hex");
 const outputSize = Buffer.byteLength(html, "utf8");

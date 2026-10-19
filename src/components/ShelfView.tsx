@@ -188,11 +188,7 @@ export default function ShelfView() {
     }
   }, [textVisible]);
 
-  const [iframeSrc, setIframeSrc] = useState("/landing-pages/complete-shelf-portfolio.html");
-
-  useEffect(() => {
-    setIframeSrc(`/landing-pages/complete-shelf-portfolio.html?t=${Date.now()}`);
-  }, []);
+  const IFRAME_SRC = "/landing-pages/shelf-portfolio-v3.html";
 
   return (
     <div className="shelf-container">
@@ -202,7 +198,7 @@ export default function ShelfView() {
           <iframe
             ref={iframeRef}
             className="shelf-frame"
-            src={iframeSrc}
+            src={IFRAME_SRC}
             title={`${p.collectionTitle} — Interactive portfolio shelf`}
             tabIndex={textVisible ? -1 : 0}
             aria-hidden={textVisible}
