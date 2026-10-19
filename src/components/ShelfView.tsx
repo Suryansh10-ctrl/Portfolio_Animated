@@ -188,7 +188,7 @@ export default function ShelfView() {
     }
   }, [textVisible]);
 
-  const IFRAME_SRC = "/landing-pages/shelf-portfolio-v3.html";
+  const IFRAME_SRC = "/landing-pages/shelf-portfolio-v4.html";
 
   return (
     <div className="shelf-container">

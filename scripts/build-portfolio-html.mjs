@@ -16,7 +16,7 @@ import { createHash } from "crypto";
 const PORTFOLIO_JSON = "content/portfolio.json";
 const SOURCE_HTML = "public/landing-pages/complete-shelf-v2.html";
 const OUTPUT_HTML = "public/landing-pages/complete-shelf-portfolio.html";
-const VERSIONED_HTML = "public/landing-pages/shelf-portfolio-v3.html";
+const VERSIONED_HTML = "public/landing-pages/shelf-portfolio-v4.html";
 
 // ── Load inputs ──────────────────────────────────────────────────────────────
 
@@ -731,7 +731,7 @@ replaceAll(
     }`,
   `    .editorial-identity strong {
       font-family: var(--serif);
-      font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+      font-size: clamp(0.95rem, 1.2vw, 1.22rem);
       font-weight: 400;
       letter-spacing: -0.03em;
       line-height: 1;
@@ -753,9 +753,9 @@ replaceAll(
   `    .editorial-identity span,
     .editorial-index span {
       color: var(--ink-soft);
-      font-size: clamp(0.68rem, 0.88vw, 0.82rem);
+      font-size: clamp(0.56rem, 0.72vw, 0.68rem);
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.11em;
       line-height: 1.5;
       text-transform: uppercase;
       transition: color 520ms var(--ease-out);
@@ -771,7 +771,7 @@ replaceAll(
       line-height: 0.9;
     }`,
   `    .selection__title {
-      font-size: clamp(1.45rem, 2.5vw, 2.5rem);
+      font-size: clamp(1.15rem, 1.8vw, 1.75rem);
       font-weight: 400;
       letter-spacing: -0.055em;
       line-height: 1.05;
@@ -792,12 +792,12 @@ replaceAll(
     }`,
   `    .selection__note {
       display: block;
-      max-width: 520px;
-      margin-top: 8px;
+      max-width: 500px;
+      margin-top: 6px;
       color: var(--ink-soft);
-      font-size: clamp(0.85rem, 1.08vw, 1.02rem);
+      font-size: clamp(0.76rem, 0.88vw, 0.86rem);
       letter-spacing: 0.01em;
-      line-height: 1.5;
+      line-height: 1.45;
       transition: color 520ms var(--ease-out);
     }`,
   "Scale base selection__note"
@@ -807,13 +807,13 @@ replaceAll(
 const TYPOGRAPHY_OVERRIDE = `
     /* ── Typography & UI sizing enhancements (scaled slightly down for elegance) ── */
     .editorial-identity strong {
-      font-size: clamp(1.15rem, 1.6vw, 1.55rem) !important;
+      font-size: clamp(0.95rem, 1.2vw, 1.22rem) !important;
     }
 
     .editorial-identity span,
     .editorial-index span {
-      font-size: clamp(0.68rem, 0.88vw, 0.82rem) !important;
-      letter-spacing: 0.12em !important;
+      font-size: clamp(0.56rem, 0.72vw, 0.68rem) !important;
+      letter-spacing: 0.11em !important;
       line-height: 1.5 !important;
     }
 
@@ -821,12 +821,12 @@ const TYPOGRAPHY_OVERRIDE = `
       display: flex !important;
       flex-direction: column !important;
       align-items: flex-start !important;
-      gap: 5px !important;
+      gap: 4px !important;
     }
 
     .counter {
       display: inline-block !important;
-      font-size: clamp(0.78rem, 0.95vw, 0.94rem) !important;
+      font-size: clamp(0.7rem, 0.82vw, 0.78rem) !important;
       font-weight: 600 !important;
       letter-spacing: 0.14em !important;
       color: var(--ink) !important;
@@ -837,42 +837,42 @@ const TYPOGRAPHY_OVERRIDE = `
     }
 
     .selection__title {
-      font-size: clamp(1.45rem, 2.5vw, 2.5rem) !important;
+      font-size: clamp(1.15rem, 1.8vw, 1.75rem) !important;
       line-height: 1.05 !important;
     }
 
     .selection__note {
       display: block !important;
-      font-size: clamp(0.85rem, 1.08vw, 1.02rem) !important;
-      max-width: 520px !important;
-      margin-top: 8px !important;
-      line-height: 1.5 !important;
+      font-size: clamp(0.76rem, 0.88vw, 0.86rem) !important;
+      max-width: 500px !important;
+      margin-top: 6px !important;
+      line-height: 1.45 !important;
       color: var(--ink-soft) !important;
     }
 
     .browse-actions {
-      gap: 8px !important;
+      gap: 6px !important;
       align-items: center !important;
       align-self: end !important;
       padding-bottom: 2px !important;
     }
 
     .round-button {
-      width: 44px !important;
-      height: 44px !important;
+      width: 38px !important;
+      height: 38px !important;
       border: 1px solid rgba(43, 34, 27, 0.35) !important;
     }
 
     .round-button svg {
-      width: 18px !important;
-      height: 18px !important;
+      width: 16px !important;
+      height: 16px !important;
       stroke-width: 1.5 !important;
     }
 
     .text-button {
-      min-height: 44px !important;
-      padding: 0 22px !important;
-      font-size: 0.76rem !important;
+      min-height: 38px !important;
+      padding: 0 18px !important;
+      font-size: 0.72rem !important;
       font-weight: 600 !important;
       letter-spacing: 0.12em !important;
       border: 1.5px solid color-mix(in srgb, var(--ink) 42%, transparent) !important;
@@ -880,57 +880,57 @@ const TYPOGRAPHY_OVERRIDE = `
     }
 
     .close-button {
-      width: 40px !important;
-      height: 40px !important;
+      width: 36px !important;
+      height: 36px !important;
     }
 
     .close-button svg {
-      width: 17px !important;
-      height: 17px !important;
+      width: 15px !important;
+      height: 15px !important;
       stroke-width: 1.5 !important;
     }
 
     .page-button {
-      width: 40px !important;
-      height: 40px !important;
+      width: 36px !important;
+      height: 36px !important;
     }
 
     .page-button svg {
-      width: 17px !important;
-      height: 17px !important;
+      width: 15px !important;
+      height: 15px !important;
       stroke-width: 1.5 !important;
     }
 
     .eyebrow {
-      font-size: 0.62rem !important;
+      font-size: 0.58rem !important;
       letter-spacing: 0.12em !important;
-      margin-bottom: 12px !important;
+      margin-bottom: 10px !important;
     }
 
     .detail-title {
-      font-size: clamp(2rem, 3.8vw, 3.8rem) !important;
-      line-height: 0.98 !important;
+      font-size: clamp(1.65rem, 2.8vw, 2.45rem) !important;
+      line-height: 1.02 !important;
     }
 
     .detail-deck {
-      font-size: clamp(0.92rem, 1.18vw, 1.08rem) !important;
+      font-size: clamp(0.82rem, 1.0vw, 0.94rem) !important;
       line-height: 1.55 !important;
-      margin-top: 16px !important;
+      margin-top: 14px !important;
     }
 
     .detail-deck::first-letter {
-      font-size: 2.3em !important;
-      margin: 4px 6px 0 0 !important;
-      line-height: 0.76 !important;
+      font-size: 2.1em !important;
+      margin: 3px 5px 0 0 !important;
+      line-height: 0.78 !important;
     }
 
     .meta-list dt {
-      font-size: 0.68rem !important;
+      font-size: 0.65rem !important;
       letter-spacing: 0.12em !important;
     }
 
     .meta-list dd {
-      font-size: 0.82rem !important;
+      font-size: 0.78rem !important;
       line-height: 1.45 !important;
       word-break: break-word !important;
     }
@@ -1044,7 +1044,7 @@ const TYPOGRAPHY_OVERRIDE = `
         margin-bottom: 0 !important;
       }
       .selection__title {
-        font-size: clamp(1.22rem, 4.8vw, 1.55rem) !important;
+        font-size: clamp(1.02rem, 3.8vw, 1.3rem) !important;
         line-height: 1.12 !important;
       }
       .selection__note {
@@ -1096,7 +1096,7 @@ const TYPOGRAPHY_OVERRIDE = `
         -webkit-overflow-scrolling: touch !important;
       }
       .detail-title {
-        font-size: clamp(1.5rem, 5.4vw, 1.95rem) !important;
+        font-size: clamp(1.35rem, 4.6vw, 1.7rem) !important;
         line-height: 1.15 !important;
       }
       .detail-deck {
