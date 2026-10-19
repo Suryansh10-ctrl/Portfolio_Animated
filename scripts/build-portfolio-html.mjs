@@ -908,7 +908,7 @@ const TYPOGRAPHY_OVERRIDE = `
 
     @media (max-width: 768px) {
       .masthead {
-        top: 56px !important;
+        top: 24px !important;
         left: 16px !important;
         right: 16px !important;
       }

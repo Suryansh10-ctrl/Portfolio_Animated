@@ -180,16 +180,6 @@ export default function ShelfView() {
 
   return (
     <div className="shelf-container">
-      {/* Floating Volume Quick-Nav Header */}
-      <nav className="shelf-top-nav" aria-label="Portfolio volumes navigation">
-        <span className="shelf-nav-title">Volumes</span>
-        {p.books.map((b) => (
-          <Link key={b.id} href={`/${b.id}`} className="shelf-nav-link" title={`Volume ${b.roman}: ${b.title}`}>
-            {b.roman}. {b.title}
-          </Link>
-        ))}
-      </nav>
-
       <div className="portfolio-root">
         {/* 3D shelf iframe — only rendered when WebGL is available */}
         {mounted && webGLAvailable && (
