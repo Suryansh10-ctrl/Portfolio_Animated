@@ -1,0 +1,25 @@
+{
+  "name": "portfolio_animation",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/watch-dev.mjs",
+    "build": "npm run build:portfolio && next build",
+    "start": "next start",
+    "build:portfolio": "node scripts/build-portfolio-html.mjs",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "next": "^16.4.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2"
+  }
+}
