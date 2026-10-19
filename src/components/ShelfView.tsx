@@ -188,7 +188,11 @@ export default function ShelfView() {
     }
   }, [textVisible]);
 
-  const [iframeSrc] = useState(() => `/landing-pages/complete-shelf-portfolio.html?v=${Date.now()}`);
+  const [iframeSrc, setIframeSrc] = useState("/landing-pages/complete-shelf-portfolio.html");
+
+  useEffect(() => {
+    setIframeSrc(`/landing-pages/complete-shelf-portfolio.html?t=${Date.now()}`);
+  }, []);
 
   return (
     <div className="shelf-container">
